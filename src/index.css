@@ -1,0 +1,219 @@
+@import "tailwindcss";
+
+/* Custom CSS Variables for Pastel Colors */
+:root {
+  --pastel-pink: #FFB6C1;
+  --pastel-lavender: #E6E6FA;
+  --pastel-blue: #B6D7FF;
+  --pastel-peach: #FFCBA4;
+  --pastel-cream: #FFF8DC;
+  --soft-pink: #FFF0F5;
+  --light-pink: #FFE4E1;
+  --gradient-bg: linear-gradient(135deg, #FFB6C1 0%, #E6E6FA 50%, #B6D7FF 100%);
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #FDF2F8;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Typography Classes */
+.font-heading {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.font-handwritten {
+  font-family: 'Caveat', cursive;
+}
+
+.font-comfort {
+  font-family: 'Comfortaa', sans-serif;
+}
+
+/* Custom Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.2); }
+}
+
+@keyframes gentle-bounce {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+.sparkle-animation {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.gentle-bounce {
+  animation: gentle-bounce 2s ease-in-out infinite;
+}
+
+/* Cute Button Styles */
+.cute-button {
+  background: #F8BBD9;
+  border: 3px solid white;
+  border-radius: 25px;
+  padding: 12px 24px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(248, 187, 217, 0.4);
+}
+
+.cute-button:hover {
+  background: #F48FB1;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(248, 187, 217, 0.6);
+}
+
+/* Polaroid Photo Style */
+.polaroid {
+  background: white;
+  padding: 10px 10px 40px 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  transform: rotate(-2deg);
+  transition: all 0.3s ease;
+}
+
+.polaroid:nth-child(even) {
+  transform: rotate(2deg);
+}
+
+.polaroid:hover {
+  transform: rotate(0deg) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Speech Bubble */
+.speech-bubble {
+  background: var(--soft-pink);
+  border-radius: 20px;
+  padding: 20px;
+  position: relative;
+  margin: 20px 0;
+}
+
+.speech-bubble::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 30px;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid var(--soft-pink);
+}
+
+/* Sticky Note Style */
+.sticky-note {
+  background: #FFFF99;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transform: rotate(-1deg);
+  position: relative;
+}
+
+.sticky-note::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Floating Hearts and Stars */
+.floating-icon {
+  position: absolute;
+  font-size: 20px;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Cat decoration borders */
+.border-3 {
+  border-width: 3px;
+}
+
+.w-18 {
+  width: 4.5rem;
+}
+
+.h-18 {
+  height: 4.5rem;
+}
+
+/* Cute Hero Section Styling */
+.hero-section {
+  background: linear-gradient(180deg, #FDF2F8 0%, #FCE7F3 100%);
+}
+
+/* Enhanced drop shadow for text */
+.drop-shadow-cute {
+  filter: drop-shadow(2px 2px 4px rgba(248, 187, 217, 0.3));
+}
+
+/* Cute border styles */
+.border-6 {
+  border-width: 6px;
+}
+
+.border-8 {
+  border-width: 8px;
+}
+
+/* Romantic text styling */
+.font-romantic {
+  font-family: 'Dancing Script', 'Caveat', cursive;
+  font-weight: 700;
+}
+
+/* Enhanced sticky note */
+.sticky-note {
+  background: #FFFF99;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transform: rotate(-1deg);
+  position: relative;
+}
+
+/* Cream background */
+.bg-cream-50 {
+  background-color: #FFFEF7;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(45deg, var(--pastel-pink), var(--pastel-lavender), var(--pastel-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

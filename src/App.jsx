@@ -1,6 +1,7 @@
 import Hero from './components/Hero';
 import MessageSection from './components/MessageSection';
 import Gallery from './components/Gallery';
+import AudioGallery from './components/AudioGallery';
 import FinalSection from './components/FinalSection';
 import BackgroundMusic from './components/BackgroundMusic';
 import './App.css';
@@ -34,6 +35,9 @@ function App() {
 
       {/* Photo Gallery */}
       <Gallery />
+
+      {/* Audio Gallery */}
+      <AudioGallery />
 
       {/* Final Section */}
       <FinalSection />

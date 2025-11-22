@@ -113,26 +113,31 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
         >
-            {/* Custom Floating Balloons Background */}
+            {/* Custom Floating Balloons Background - Mobile Optimized */}
             <div className="absolute inset-0 z-0">
-                <FloatingBalloon delay={0} color="#FFB6C1" size={60} left={8} top={15} />
-                <FloatingBalloon delay={1} color="#E6E6FA" size={55} left={88} top={20} />
-                <FloatingBalloon delay={2} color="#F0E6FF" size={65} left={12} top={65} />
-                <FloatingBalloon delay={3} color="#FFE4E1" size={58} left={85} top={70} />
-                <FloatingBalloon delay={4} color="#FFF0F5" size={52} left={45} top={8} />
-                <FloatingBalloon delay={5} color="#FFB6C1" size={62} left={20} top={40} />
-                <FloatingBalloon delay={6} color="#E6E6FA" size={56} left={78} top={42} />
-                <FloatingBalloon delay={7} color="#F0E6FF" size={59} left={3} top={85} />
-                <FloatingBalloon delay={8} color="#FFE4E1" size={54} left={92} top={88} />
-                <FloatingBalloon delay={9} color="#FFF0F5" size={61} left={35} top={75} />
+                {/* Fewer balloons on mobile for better performance */}
+                <FloatingBalloon delay={0} color="#FFB6C1" size={45} left={8} top={15} />
+                <FloatingBalloon delay={1} color="#E6E6FA" size={40} left={88} top={20} />
+                <FloatingBalloon delay={2} color="#F0E6FF" size={50} left={12} top={65} />
+                <FloatingBalloon delay={3} color="#FFE4E1" size={42} left={85} top={70} />
+                <FloatingBalloon delay={4} color="#FFF0F5" size={38} left={45} top={8} />
+                {/* Hide some balloons on mobile */}
+                <div className="hidden sm:block">
+                  <FloatingBalloon delay={5} color="#FFB6C1" size={62} left={20} top={40} />
+                  <FloatingBalloon delay={6} color="#E6E6FA" size={56} left={78} top={42} />
+                  <FloatingBalloon delay={7} color="#F0E6FF" size={59} left={3} top={85} />
+                  <FloatingBalloon delay={8} color="#FFE4E1" size={54} left={92} top={88} />
+                  <FloatingBalloon delay={9} color="#FFF0F5" size={61} left={35} top={75} />
+                </div>
             </div>
 
-            {/* Soft Confetti/Sparkles */}
+            {/* Soft Confetti/Sparkles - Mobile Optimized */}
             <div className="absolute inset-0 z-1">
-                {[...Array(12)].map((_, i) => (
+                {/* Fewer sparkles on mobile */}
+                {[...Array(8)].map((_, i) => (
                     <motion.div
                         key={i}
-                        className="absolute text-lg opacity-40"
+                        className="absolute text-sm sm:text-lg opacity-40"
                         style={{
                             left: `${Math.random() * 100}%`,
                             top: `${Math.random() * 100}%`,
@@ -165,9 +170,9 @@ const Hero = () => {
                                 transition: { duration: 0.3 }
                             }}
                         >
-                            {/* Polaroid Frame */}
-                            <div className="bg-white p-4 pb-16 rounded-lg shadow-2xl transform -rotate-3 border border-gray-100">
-                                <div className="w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 overflow-hidden rounded-md">
+                            {/* Polaroid Frame - Mobile Optimized */}
+                            <div className="bg-white p-3 sm:p-4 pb-12 sm:pb-16 rounded-lg shadow-2xl transform -rotate-3 border border-gray-100">
+                                <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 overflow-hidden rounded-md">
                                     <img 
                                         src={mainPhoto} 
                                         alt="Beautiful Amii" 
@@ -177,12 +182,12 @@ const Hero = () => {
                                 
                                 {/* "My BBG" text at bottom of Polaroid */}
                                 <motion.div 
-                                    className="absolute bottom-4 left-0 right-0 text-center"
+                                    className="absolute bottom-3 sm:bottom-4 left-0 right-0 text-center"
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     transition={{ delay: 1.2 }}
                                 >
-                                    <p className="font-handwritten text-2xl text-gray-600">
+                                    <p className="font-handwritten text-lg sm:text-2xl text-gray-600">
                                         My BBG 💖
                                     </p>
                                 </motion.div>
@@ -198,9 +203,9 @@ const Hero = () => {
                         className="text-center lg:text-left space-y-6 order-2"
                         variants={textVariants}
                     >
-                        {/* Happy Birthday - Great Vibes Calligraphy */}
+                        {/* Happy Birthday - Great Vibes Calligraphy - Mobile Optimized */}
                         <motion.h1 
-                            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-tight"
+                            className="text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-10xl leading-tight"
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ 
@@ -215,16 +220,16 @@ const Hero = () => {
                                 WebkitBackgroundClip: 'text',
                                 WebkitTextFillColor: 'transparent',
                                 backgroundClip: 'text',
-                                textShadow: '4px 4px 8px rgba(255, 105, 180, 0.4)',
-                                filter: 'drop-shadow(3px 3px 6px rgba(255, 20, 147, 0.3))'
+                                textShadow: '2px 2px 4px rgba(255, 105, 180, 0.4)',
+                                filter: 'drop-shadow(2px 2px 4px rgba(255, 20, 147, 0.3))'
                             }}
                         >
                             Happy Birthday
                         </motion.h1>
                         
-                        {/* Amii - Great Vibes Calligraphy Style */}
+                        {/* Amii - Great Vibes Calligraphy Style - Mobile Optimized */}
                         <motion.h2 
-                            className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[8rem] mt-4 relative"
+                            className="text-6xl xs:text-7xl sm:text-8xl md:text-9xl lg:text-10xl xl:text-11xl mt-2 sm:mt-4 relative"
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ 
@@ -236,15 +241,15 @@ const Hero = () => {
                             style={{
                                 fontFamily: "'Great Vibes', cursive",
                                 color: '#9333EA',
-                                textShadow: '3px 3px 6px rgba(147, 51, 234, 0.3)',
-                                filter: 'drop-shadow(2px 2px 4px rgba(147, 51, 234, 0.2))'
+                                textShadow: '2px 2px 4px rgba(147, 51, 234, 0.3)',
+                                filter: 'drop-shadow(1px 1px 2px rgba(147, 51, 234, 0.2))'
                             }}
                         >
                             <span className="relative inline-block">
                                 Amii
-                                {/* Decorative flourish */}
+                                {/* Decorative flourish - Mobile Optimized */}
                                 <motion.span 
-                                    className="absolute -top-4 -right-8 text-4xl"
+                                    className="absolute -top-2 sm:-top-4 -right-4 sm:-right-8 text-2xl sm:text-4xl"
                                     animate={{ 
                                         rotate: [0, 10, -10, 0],
                                         scale: [1, 1.1, 1]
@@ -257,9 +262,9 @@ const Hero = () => {
                                 >
                                     💖
                                 </motion.span>
-                                {/* Sparkle effects */}
+                                {/* Sparkle effects - Mobile Optimized */}
                                 <motion.span 
-                                    className="absolute -top-6 left-1/4 text-2xl"
+                                    className="absolute -top-3 sm:-top-6 left-1/4 text-lg sm:text-2xl"
                                     animate={{ 
                                         opacity: [0.5, 1, 0.5],
                                         scale: [0.8, 1.2, 0.8]
@@ -274,7 +279,7 @@ const Hero = () => {
                                     ✨
                                 </motion.span>
                                 <motion.span 
-                                    className="absolute -bottom-4 right-1/3 text-2xl"
+                                    className="absolute -bottom-2 sm:-bottom-4 right-1/3 text-lg sm:text-2xl"
                                     animate={{ 
                                         opacity: [0.5, 1, 0.5],
                                         scale: [0.8, 1.2, 0.8]
@@ -291,9 +296,9 @@ const Hero = () => {
                             </span>
                         </motion.h2>
 
-                        {/* Optional cute message */}
+                        {/* Optional cute message - Mobile Optimized */}
                         <motion.p 
-                            className="font-handwritten text-xl text-pink-500 mt-8 opacity-80"
+                            className="font-handwritten text-lg sm:text-xl text-pink-500 mt-4 sm:mt-8 opacity-80"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 0.8 }}
                             transition={{ delay: 1.2 }}

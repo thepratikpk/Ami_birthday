@@ -102,10 +102,10 @@ const Gallery = () => {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="font-heading text-5xl md:text-6xl font-bold text-pink-500 drop-shadow-lg mb-4">
+        <h2 className="font-heading text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-bold text-pink-500 drop-shadow-lg mb-3 sm:mb-4">
           Beautiful Memories 📸
         </h2>
-        <p className="font-comfort text-xl text-purple-600 bg-white/60 rounded-full px-6 py-2 inline-block shadow-lg">
+        <p className="font-comfort text-base sm:text-lg md:text-xl text-purple-600 bg-white/60 rounded-full px-4 sm:px-6 py-2 inline-block shadow-lg">
           Every moment with you is picture perfect! 💕
         </p>
       </motion.div>
@@ -176,7 +176,7 @@ const Gallery = () => {
           <div className="absolute -bottom-4 -left-4 text-4xl z-10">🎀</div>
           <div className="absolute -bottom-4 -right-4 text-4xl z-10">💝</div>
           
-          <div className="h-[600px] bg-pink-50 rounded-3xl shadow-2xl border-4 border-pink-200 overflow-hidden relative">
+          <div className="h-[400px] sm:h-[500px] md:h-[600px] bg-pink-50 rounded-2xl sm:rounded-3xl shadow-2xl border-2 sm:border-4 border-pink-200 overflow-hidden relative">
             {/* Subtle pattern overlay */}
             <div className="absolute inset-0 opacity-10 pointer-events-none">
               <div className="absolute top-8 left-8 text-6xl">💕</div>
@@ -204,7 +204,7 @@ const Gallery = () => {
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          <p className="font-handwritten text-lg text-purple-500 mb-2">
+          <p className="font-handwritten text-base sm:text-lg text-purple-500 mb-2">
             ✨ Drag or scroll to explore the 3D memories ✨
           </p>
           <div className="flex justify-center space-x-2">
@@ -228,9 +228,9 @@ const Gallery = () => {
           </div>
         </motion.div>
 
-        {/* Clickable Photo Grid - Always visible for interaction */}
+        {/* Clickable Photo Grid - Mobile Optimized */}
         <motion.div 
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-12"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3 md:gap-4 mt-8 sm:mt-12 px-2 sm:px-0"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
@@ -243,23 +243,23 @@ const Gallery = () => {
               whileTap={{ scale: 0.95 }}
               onClick={() => setSelectedPhoto(item)}
             >
-              <div className="bg-white p-2 pb-8 rounded-lg shadow-lg border-2 border-pink-200 transform rotate-1 hover:rotate-0 transition-transform">
-                <div className="w-full h-24 sm:h-32 bg-pink-50 rounded flex items-center justify-center overflow-hidden">
+              <div className="bg-white p-1.5 sm:p-2 pb-6 sm:pb-8 rounded-lg shadow-lg border-2 border-pink-200 transform rotate-1 hover:rotate-0 transition-transform">
+                <div className="w-full h-20 xs:h-24 sm:h-28 md:h-32 bg-pink-50 rounded flex items-center justify-center overflow-hidden">
                   <img 
                     src={item.image} 
                     alt={item.text}
                     className="max-w-full max-h-full object-contain rounded"
                   />
                 </div>
-                <p className="text-center text-xs font-handwritten text-purple-600 mt-2">
+                <p className="text-center text-xs sm:text-sm font-handwritten text-purple-600 mt-1 sm:mt-2">
                   {item.text}
                 </p>
               </div>
               <div className="absolute inset-0 bg-pink-200 opacity-0 group-hover:opacity-20 rounded-lg transition-opacity"></div>
               
-              {/* Click indicator */}
+              {/* Click indicator - Mobile Optimized */}
               <motion.div 
-                className="absolute top-2 right-2 bg-pink-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity"
+                className="absolute top-1 sm:top-2 right-1 sm:right-2 bg-pink-500 text-white rounded-full w-5 sm:w-6 h-5 sm:h-6 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity"
                 animate={{ scale: [1, 1.1, 1] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
               >
@@ -271,15 +271,15 @@ const Gallery = () => {
 
         {/* Alternative: Simple instruction for 3D gallery */}
         <motion.div 
-          className="text-center mt-8 bg-white/80 rounded-2xl p-4 mx-auto max-w-md"
+          className="text-center mt-6 sm:mt-8 bg-white/80 rounded-2xl p-3 sm:p-4 mx-auto max-w-xs sm:max-w-md"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
         >
-          <p className="font-handwritten text-lg text-purple-600 mb-2">
+          <p className="font-handwritten text-base sm:text-lg text-purple-600 mb-2">
             💡 The 3D gallery above is for viewing
           </p>
-          <p className="font-handwritten text-md text-pink-500">
+          <p className="font-handwritten text-sm sm:text-base text-pink-500">
             👆 Click the photos below to read special messages!
           </p>
         </motion.div>
@@ -316,7 +316,7 @@ const Gallery = () => {
           onClick={() => setSelectedPhoto(null)}
         >
           <motion.div
-            className="bg-white rounded-3xl p-6 max-w-lg w-full mx-4 relative max-h-[90vh] overflow-y-auto"
+            className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 max-w-sm sm:max-w-md md:max-w-lg w-full mx-2 sm:mx-4 relative max-h-[90vh] overflow-y-auto"
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.5, opacity: 0 }}
@@ -336,9 +336,9 @@ const Gallery = () => {
             <div className="absolute -bottom-2 -left-2 text-2xl">💖</div>
             <div className="absolute -bottom-2 -right-2 text-2xl">🦋</div>
 
-            {/* Photo */}
-            <div className="bg-pink-50 p-4 pb-8 rounded-2xl mb-6 shadow-inner">
-              <div className="w-full h-80 bg-white rounded-lg flex items-center justify-center overflow-hidden">
+            {/* Photo - Mobile Optimized */}
+            <div className="bg-pink-50 p-3 sm:p-4 pb-6 sm:pb-8 rounded-2xl mb-4 sm:mb-6 shadow-inner">
+              <div className="w-full h-48 xs:h-56 sm:h-64 md:h-80 bg-white rounded-lg flex items-center justify-center overflow-hidden">
                 <img 
                   src={selectedPhoto.image} 
                   alt={selectedPhoto.text}
@@ -346,7 +346,7 @@ const Gallery = () => {
                 />
               </div>
               <motion.p 
-                className="text-center text-xl font-handwritten text-purple-600 mt-3"
+                className="text-center text-lg sm:text-xl font-handwritten text-purple-600 mt-2 sm:mt-3"
                 style={{ fontFamily: "'Great Vibes', cursive" }}
                 animate={{ scale: [1, 1.02, 1] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
@@ -355,14 +355,14 @@ const Gallery = () => {
               </motion.p>
             </div>
 
-            {/* Message */}
+            {/* Message - Mobile Optimized */}
             <motion.div
-              className="bg-linear-to-br from-pink-50 to-purple-50 p-6 rounded-2xl border-2 border-pink-200"
+              className="bg-gradient-to-br from-pink-50 to-purple-50 p-4 sm:p-6 rounded-2xl border-2 border-pink-200"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3 }}
             >
-              <p className="font-comfort text-purple-700 text-center leading-relaxed">
+              <p className="font-comfort text-sm sm:text-base md:text-lg text-purple-700 text-center leading-relaxed">
                 {selectedPhoto.message}
               </p>
             </motion.div>

@@ -217,3 +217,26 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* Extra large text sizes for mobile */
+.text-10xl {
+  font-size: 9rem;
+  line-height: 1;
+}
+
+.text-11xl {
+  font-size: 10rem;
+  line-height: 1;
+}
+
+/* Mobile touch improvements */
+@media (max-width: 640px) {
+  .audio-card {
+    min-height: 200px;
+  }
+  
+  .audio-card button {
+    min-width: 48px;
+    min-height: 48px;
+  }
+}
